@@ -24,7 +24,7 @@ class App extends React.Component<any, any> {
 
   componentDidMount() {
     // When the component first loads we attach the three js scene to a div.
-    Scene(this.sceneRoot)
+    Scene((this as any).sceneRoot)
   }
 
   render() {
@@ -42,7 +42,7 @@ class App extends React.Component<any, any> {
 
           </div>
           <div className="editor">
-            <div className="editor__canvas" ref={element => this.sceneRoot = element} />
+            <div className="editor__canvas" ref={element => (this as any).sceneRoot = element} />
           </div>
 
         </div>

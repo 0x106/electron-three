@@ -6,7 +6,7 @@ import { OrbitControls } from 'three-orbitcontrols-ts';
 // this probably isn't good practice though.
 const scene = new THREE.Scene();
 
-const randomPosition = (object) => {
+const randomPosition = (object:any) => {
   const lower = -6.0
   const upper = 6.0
 
@@ -24,7 +24,7 @@ export const addCube = () => {
   let geometry = new THREE.BoxGeometry( 1, 1, 1 );
   let material = new THREE.MeshBasicMaterial( { color: 0x001f54 } );
   let cube = new THREE.Mesh( geometry, material );
-  cube.shouldAnimate = true
+  (cube as any).shouldAnimate = true
   randomPosition( cube )
   scene.add( cube );
 }
@@ -34,14 +34,14 @@ export const addSphere = () => {
   var material = new THREE.MeshBasicMaterial( {color: 0xffaabb} );
   var sphere = new THREE.Mesh( geometry, material );
   randomPosition( sphere )
-  sphere.shouldAnimate = false
+  (sphere as any).shouldAnimate = false
   sphere.scale.x = 0.01
   sphere.scale.y = 0.01
   sphere.scale.z = 0.01
   scene.add( sphere );
 }
 
-export const Scene = (root) => {
+export const Scene = (root:HTMLElement) => {
 
   const canvas = document.createElement('canvas');
   canvas.style.width = '100%';
@@ -66,7 +66,7 @@ export const Scene = (root) => {
 		requestAnimationFrame( animate );
 
     // rotating spheres isn't particularly exciting
-    scene.children.filter( child => child.shouldAnimate ).map( child => {
+    scene.children.filter( child => (child as any).shouldAnimate ).map( child => {
       child.rotation.x += 0.01;
     })
 

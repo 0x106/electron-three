@@ -21,7 +21,7 @@ export default class Menu extends React.Component<any, any> {
   public render() {
     const { items, onButtonClick } = this.state;
 
-    const menu__buttons = items.map( element => {
+    const menu__buttons = items.map( (element:any) => {
         return (
           <button
             key={element.name}
