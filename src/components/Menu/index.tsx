@@ -1,6 +1,5 @@
 // Super simple menu
 // Elements are arranged with flex box
-// I'm not great with design.
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';

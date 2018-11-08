@@ -15,6 +15,8 @@ I'm not sure why the ThreeJS primitives are so blurry -- whenever I've used Thre
 
 This is using React, but the actual Three scene is separated, since Three + React components can lead to problems down the road.
 
+Design is definitely my weak point -- it's something that I am actively working on improving.
+
 Adapted from https://taraksharma.com/setting-up-electron-typescript-react-webpack/
 
 **Build steps**

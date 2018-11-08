@@ -10,14 +10,15 @@ class App extends React.Component<any, any> {
 
   constructor(props: any) {
     super(props);
-    this.state = {
-      headerMessage: 'Editor Demo'
-    }
+    this.state = { headerMessage: 'Editor Demo' }
     this.onButtonClick = this.onButtonClick.bind(this);
   }
 
+  // When a button is clicked we tell the THREE manager to add either a cube or
+  // a sphere. Our React component only contains an entry point for the Three
+  // scene - so we have to pass messages down to it, rather than via components.
   onButtonClick(id: String) {
-    this.setState({ headerMessage: "Unsure why everything is blurry" })
+    this.setState({ headerMessage: "Click and drag on the screen to move around." })
     id === 'Cube' ? addCube() : addSphere()
   }
 

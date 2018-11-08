@@ -1,5 +1,5 @@
 {
-  "name": "astro-zap",
+  "name": "electron-three",
   "version": "1.0.0",
   "main": "./dist/main.bundle.js",
   "scripts": {
@@ -7,7 +7,7 @@
     "development": "rimraf dist && webpack --watch --config ./webpack.dev.js --progress --colors",
     "production": "rimraf dist && webpack --config ./webpack.prod.js --progress --colors"
   },
-  "author": "Jordan Campbell <jordan.evan.campbell@gmail.com>",
+  "author": "Jordan Campbell <jordan@astro.codes>",
   "license": "MIT",
   "devDependencies": {
     "@types/react": "^16.4.18",
