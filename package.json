@@ -1,0 +1,36 @@
+{
+  "name": "astro-zap",
+  "version": "1.0.0",
+  "main": "./dist/main.bundle.js",
+  "scripts": {
+    "start": "electron ./dist/main.bundle.js",
+    "development": "rimraf dist && webpack --watch --config ./webpack.dev.js --progress --colors",
+    "production": "rimraf dist && webpack --config ./webpack.prod.js --progress --colors"
+  },
+  "author": "Jordan Campbell <jordan.evan.campbell@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^16.4.18",
+    "@types/react-dom": "^16.0.9",
+    "@types/three": "^0.93.8",
+    "css-loader": "^1.0.1",
+    "electron": "3.0.8",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.10.0",
+    "prettier": "1.15.1",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^5.3.0",
+    "typescript": "^3.1.6",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "three": "^0.98.0",
+    "three-orbitcontrols-ts": "^0.1.2"
+  }
+}

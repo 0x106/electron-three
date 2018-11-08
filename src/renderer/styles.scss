@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500');
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 11fr;
+  grid-template-areas: "header" "content";
+  width: 100%;
+  height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  color: #253D5B;
+  text-align: center;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 300;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "menu editor";
+  grid-area: content;
+}
+
+.menu {
+  grid-area: menu;
+}
+
+.editor {
+  grid-area: editor;
+
+  // width: 600px;
+  height: 600px;
+  //
+  &__canvas {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
