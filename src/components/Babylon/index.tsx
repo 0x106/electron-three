@@ -27,6 +27,7 @@ export default class Renderer {
 
     const scene = new BABYLON.Scene(engine);
     this._scene = scene;
+    this._scene.clearColor = new BABYLON.Color3(0.15, 0.24, 0.36);
 
     const camera = new BABYLON.FreeCamera(uuid("camera"), new BABYLON.Vector3(0, 5, -10), scene);
     camera.setTarget(BABYLON.Vector3.Zero());

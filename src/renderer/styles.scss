@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500');
 
+$color-bg: #253D5B;
+
 body {
   margin: 0;
   padding: 0;
@@ -16,10 +18,11 @@ body {
 
 .header {
   grid-area: header;
-  color: #253D5B;
+  color: #ffffff;
   text-align: center;
   font-family: 'Fira Sans', sans-serif;
   font-weight: 300;
+  background-color: $color-bg;
 }
 
 .content {
@@ -32,18 +35,33 @@ body {
 
 .menu {
   grid-area: menu;
+  background-color: $color-bg;
 }
 
 .editor {
   grid-area: editor;
-  margin-right: 40px;
-  margin-bottom: 40px;
 
   &__canvas {
-
-    // the container canvas will stretch to fill its available space
-    // as the window is resized
     width: 100%;
     height: 100%;
   }
+
+  &__canvas:focus {
+    outline: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  }
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  color: #ffffff;
+  // font-size: 1.2em;
+  border: 1px solid #ffffff;
+  border-radius: 0.15em;
 }
