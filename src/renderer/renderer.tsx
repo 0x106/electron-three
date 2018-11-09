@@ -4,14 +4,20 @@ import * as ReactDOM from 'react-dom';
 import Menu from '../components/Menu';
 import {Scene, addCube, addSphere} from '../components/Scene';
 
+import BabylonRenderer from '../components/Babylon'
+
 import './styles.scss';
 
 class App extends React.Component<any, any> {
+
+  private renderer: BabylonRenderer
+  private sceneRoot: HTMLCanvasElement
 
   constructor(props: any) {
     super(props);
     this.state = { headerMessage: 'Editor Demo' }
     this.onButtonClick = this.onButtonClick.bind(this);
+    this.renderer = new BabylonRenderer();
   }
 
   // When a button is clicked we tell the THREE manager to add either a cube or
@@ -24,7 +30,8 @@ class App extends React.Component<any, any> {
 
   componentDidMount() {
     // When the component first loads we attach the three js scene to a div.
-    Scene((this as any).sceneRoot)
+    // Scene((this as any).sceneRoot)
+    this.renderer.initialize( this.sceneRoot )
   }
 
   render() {
@@ -42,7 +49,7 @@ class App extends React.Component<any, any> {
 
           </div>
           <div className="editor">
-            <div className="editor__canvas" ref={element => (this as any).sceneRoot = element} />
+              <canvas className="editor__canvas" ref={element => (this as any).sceneRoot = element} />
           </div>
 
         </div>

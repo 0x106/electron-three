@@ -36,16 +36,19 @@ body {
 
 .editor {
   grid-area: editor;
+  margin-right: 40px;
+  margin-bottom: 40px;
 
-  // width: 600px;
-  height: 600px;
-  //
   &__canvas {
+
+    // the container canvas will stretch to fill its available space
+    // as the window is resized
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-around;
+    // align-items: center;
   }
 }

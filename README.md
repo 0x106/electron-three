@@ -41,3 +41,10 @@ Adapted from https://taraksharma.com/setting-up-electron-typescript-react-webpac
 17. Edit package.json
 18. `yarn run development`
 19. `yarn start`
+
+
+
+###### Babylon JS support
+
+1. https://dev.to/justinctlam/building-a-3d-application-with-electron-and-babylonjs-using-typescript-2g29
+2. `yarn add babylonjs@3.1.1`
