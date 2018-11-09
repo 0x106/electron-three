@@ -1,5 +1,5 @@
 
-### Simple Electron + React + Typescript + ThreeJS demo
+### Simple Electron + React + Typescript + BabylonJS demo
 
 **To run**
 
@@ -9,15 +9,15 @@
 4. `yarn run development`
 5. (new tab) `yarn start`
 
-This is a simple demo that I put together over a couple of hours. It emits some Typescript errors which I am choosing to quietly ignore for now, although generally I wouldn't do this (no point in using Typescript if you're going to ignore compile time errors).
+This is a simple demo that I put together ~~over a couple of hours~~ (over more than a couple of hours). ~~It emits some Typescript errors~~. These errors have now been resolved.
 
-I'm not sure why the ThreeJS primitives are so blurry -- whenever I've used Three in the past everything has been crisp.
+~~I'm not sure why the ThreeJS primitives are so blurry -- whenever I've used Three in the past everything has been crisp.~~ Switched to Babylon JS and resolved this anyway.
 
-This is using React, but the actual Three scene is separated, since Three + React components can lead to problems down the road.
+This is using React, but the actual Babylon scene is separated, since ~~Three + React components can lead to problems down the road~~. React is best for the 2D UI, it's not suitable for the 3D interface as well.
 
 Design is definitely my weak point -- it's something that I am actively working on improving.
 
-Adapted from https://taraksharma.com/setting-up-electron-typescript-react-webpack/
+Adapted from https://taraksharma.com/setting-up-electron-typescript-react-webpack/ (the original project config).
 
 **Build steps**
 
