@@ -36,7 +36,7 @@ export default class Menu extends React.Component<any, any> {
             key={element.name}
             className="menu__item"
             onClick={
-              (event: Event) => onButtonClick(element.type)
+              (event: React.MouseEvent<HTMLButtonElement>) => onButtonClick(element.type)
             }
           > {element.name} </button>)
     })
