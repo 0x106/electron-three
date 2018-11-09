@@ -2,8 +2,6 @@ import { app, BrowserWindow } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 
-import * as three from 'three';
-
 let mainWindow: Electron.BrowserWindow;
 
 function createWindow() {

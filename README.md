@@ -42,7 +42,7 @@ Adapted from https://taraksharma.com/setting-up-electron-typescript-react-webpac
 18. `yarn run development`
 19. `yarn start`
 
-
+--> 
 
 ###### Babylon JS support
 
