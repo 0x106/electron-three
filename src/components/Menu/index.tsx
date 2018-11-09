@@ -3,6 +3,9 @@
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+
+import {PrimitiveType} from '../Babylon';
+
 import './styles.scss';
 
 export default class Menu extends React.Component<any, any> {
@@ -11,8 +14,14 @@ export default class Menu extends React.Component<any, any> {
     super(props);
     this.state = {
       items: [
-        {name: "Cube"},
-        {name: "Sphere"}
+        {
+          name: "Cube",
+          type: PrimitiveType.cube
+        },
+        {
+          name: "Sphere",
+          type: PrimitiveType.sphere
+        }
       ],
       onButtonClick: props.onButtonClick
     }
@@ -27,7 +36,7 @@ export default class Menu extends React.Component<any, any> {
             key={element.name}
             className="menu__item"
             onClick={
-              (event: Event) => onButtonClick(element.name)
+              (event: Event) => onButtonClick(element.type)
             }
           > {element.name} </button>)
     })

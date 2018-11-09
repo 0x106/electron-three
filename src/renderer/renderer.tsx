@@ -2,9 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 import Menu from '../components/Menu';
-import {Scene, addCube, addSphere} from '../components/Scene';
-
-import BabylonRenderer from '../components/Babylon'
+import BabylonRenderer, {PrimitiveType} from '../components/Babylon'
 
 import './styles.scss';
 
@@ -20,12 +18,11 @@ class App extends React.Component<any, any> {
     this.renderer = new BabylonRenderer();
   }
 
-  // When a button is clicked we tell the THREE manager to add either a cube or
-  // a sphere. Our React component only contains an entry point for the Three
+  // When a button is clicked we tell the Babylon manager to add either a cube or
+  // a sphere. Our React component only contains an entry point for the Babylon
   // scene - so we have to pass messages down to it, rather than via components.
-  onButtonClick(id: String) {
-    this.setState({ headerMessage: "Click and drag on the screen to move around." })
-    id === 'Cube' ? addCube() : addSphere()
+  onButtonClick(type: PrimitiveType) {
+    this.renderer.createElement(type)
   }
 
   componentDidMount() {

@@ -1,6 +1,25 @@
 // https://dev.to/justinctlam/building-a-3d-application-with-electron-and-babylonjs-using-typescript-2g29
 
 import * as BABYLON from 'babylonjs';
+import uuid from 'uuid/v4'
+
+export const enum PrimitiveType {
+  cube,
+  sphere
+}
+
+const createRandomPosition = (obj: any) => {
+    const lower = -6.0;
+    const upper = 6.0;
+
+    const random = (lower: number, upper: number) => {
+      return Math.floor(Math.random()*(upper-lower+1)+lower);
+    }
+
+    obj.position.x = random(lower, upper)
+    obj.position.y = random(lower, upper)
+    obj.position.z = random(lower, upper)
+}
 
 export default class Renderer {
     private _canvas: HTMLCanvasElement;
@@ -30,20 +49,13 @@ export default class Renderer {
         // Default intensity is 1. Let's dim the light a small amount
         light.intensity = 0.7;
 
-        // Our built-in 'sphere' shape. Params: name, subdivs, size, scene
-        const sphere = BABYLON.Mesh.CreateSphere("sphere1", 16, 2, scene);
-
-        // Move the sphere upward 1/2 its height
-        sphere.position.y = 1;
-
         // Our built-in 'ground' shape. Params: name, width, depth, subdivs, scene
         const ground = BABYLON.Mesh.CreateGround("ground1", 6, 6, 2, scene);
     }
 
     initialize(canvas: HTMLCanvasElement) {
 
-        canvas.height = 600;
-        canvas.width = 800;
+        canvas.height = 600; canvas.width = 800;
 
         const engine = new BABYLON.Engine(canvas, true);
         this.createScene(canvas, engine);
@@ -56,3 +68,29 @@ export default class Renderer {
             engine.resize();
         });
     }
+
+    private createCube() {
+      const key = uuid();
+      const cube = BABYLON.Mesh.CreateBox(key, 2, this._scene);
+      cube.position.y = 1;
+    }
+
+    private createSphere() {
+      const key = uuid();
+      const sphere = BABYLON.Mesh.CreateSphere(key, 16, 2, this._scene);
+      sphere.position.y = 1;
+    }
+
+    createElement(type: PrimitiveType) {
+      switch(type) {
+         case PrimitiveType.cube: {
+            this.createCube(); break;
+         }
+         case PrimitiveType.sphere: {
+            this.createSphere(); break;
+         }
+         default: { break; }
+      }
+    }
+
+  }
